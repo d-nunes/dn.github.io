@@ -1,0 +1,162 @@
+@font-face {
+    font-family: RobotoBold;
+    src: url(../fonts/Roboto_Mono/RobotoMono-Bold.ttf);
+}
+
+*
+{
+    font-family: RobotoBold;
+}
+
+html {
+    display: table;
+    margin: auto;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+
+    height: 100%;
+    overflow: hidden;
+    /*vertical-align: middle;
+    background-color: black;*/
+}
+
+.shrinkLineHeight
+{
+    line-height: 50%;
+}
+
+.backgroundVideo
+{
+    /*min-width: 100%;
+    min-height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);*/
+    position: fixed;
+    top: 0;
+    left: 0;
+    min-height: 100%;
+    filter: brightness(50%);
+
+    z-index: -10;
+}
+
+/*the tint that's displayed on top of the background video*/
+/*.backgroundVideo::after
+{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}*/
+
+.center
+{
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.topRight
+{
+    position: absolute;
+    top: 2%;
+    right: 2%;
+}
+
+.topLeft
+{
+    position: absolute;
+    top: 2%;
+    left: 2%;
+}
+
+.links
+{
+    margin: 0;
+    padding: 0;
+}
+
+.links ul li
+{
+    list-style: none;
+    display: inline-block;
+    padding: 0px 25px 0px 0px;
+    position: relative;
+}
+
+.links ul li button
+{
+    text-decoration: none;
+    color: white;
+    font-size: 25px;
+
+    /*hiding actual button imagery*/
+    background: none;
+    border: none;
+}
+
+/*defining those little white underlines for the text at the top right corner*/
+.links ul li button::after
+{
+    content : '';
+    width : 0%;
+    height : 3px;
+    background-color: white;
+    display: block;
+    margin: auto;
+    border-radius: 5px;
+
+    transition: 0.25s;
+}
+
+/*when hovering over the corner text, the underline will grow*/
+.links ul li button:hover::after
+{
+    width : 100%;
+}
+
+.headerBar
+{
+    height: 14.25vh;
+    width: 0vw;
+    background-color: black;
+
+    position: absolute;
+    top: 0px;
+    right: 0px;
+
+    transition: 0.5s;
+
+    z-index: -1;
+}
+
+.screen
+{
+    height: 100vh;
+    width: 100vw;
+    background-color: black;
+
+    position: relative;
+    
+    transition: 0.35s;
+
+    z-index: -1;
+}
+
+.homeButton
+{
+    opacity: 0;
+
+    transition: 0.25s;
+}

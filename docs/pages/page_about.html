@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(20, 20, 20); overflow: hidden;" onload="PullUpScreen()">
+
+        <div>
+
+            <div style="position: absolute;
+                        display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5;
+                        margin: 12vh 0 10% 0;
+                        left: 0;
+                        right: 0;">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 10% 5% 10% 10%;">
+                    Welcome to my page!<br/><br/>
+                    My name's Daniel. I've been playing video games since I was 5 years old, and I'm looking to see if I
+                    can make it in the game industry. I went to DigiPen Institute of Technology and earned my Bachelor's
+                    Degree in Computer Science and Game Design in 2023.
+                </p>
+
+                <div style="margin: 10% 10% 10% 5%;">
+                    <img src="../media/temp.png" style="width: 75%; margin: 0 0 0 0;">
+                </div>
+            </div>
+
+            <div class="screen"></div>
+            <div class="headerBar"></div>
+            
+            <div class="topRight links">
+                <ul>
+                    <li><button>About</button></li>
+                    <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+                    <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+                </ul>
+            </div>
+
+            <div class="topLeft links">
+                <ul>
+                    <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+
+</html>

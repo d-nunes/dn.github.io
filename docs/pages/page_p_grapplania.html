@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: black;" onload="PullUpScreen()">
+    
+        <img src="../media/grapplania/Thumbnail_Grapplania.PNG"
+            style="position: fixed;
+                    z-index: -10;
+                    filter: brightness(10%);
+                    top: 0;
+                    left: 0;
+                    -webkit-user-drag: none;
+                    min-height: 100%;">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(10, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center;">
+                <img src="../media/grapplania/Logo_Grapplania.PNG"
+                    style="width: 50%; filter: drop-shadow(0 0 25px white); -webkit-user-drag: none;">
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                Grapplania is a 2D platformer with a focus on momentum. Join Lynn,
+                a descendant of a long line of whip-wielding warriors on an adventure
+                through an abandoned castle filled with treasure. The journey will be
+                treacherous, but with the help of her family's chain whip. Lynn is
+                more than capable of circumventing the many obstacles to be faced.
+                <br/><br/>
+                Available on Steam and Itch.io
+            </p>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/yr6pHrU3H_g">
+            </iframe>
+
+            <div style="display: flex;
+                        justify-content: space-around;
+                        margin: 2.5% 10% 2.5% 10%">
+                <img src="../media/available_steam.png"
+                    style="width: 30%; filter: drop-shadow(0px 0px 10px white); -webkit-user-drag: none;"
+                    onclick="OpenNewTab('https://store.steampowered.com/app/2459460/Grapplania/')">
+                <img src="../media/available_itch.svg"
+                    style="width: 30%; filter: drop-shadow(0px 0px 10px white); -webkit-user-drag: none;"
+                    onclick="OpenNewTab('https://digipen.itch.io/grapplania');">
+            </div>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 2.5% 10% 5% 10%">Info</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto auto auto auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    This was a solo project I made in the Unity engine over the course of my final semester of DigiPen. Back in
+                    sophomore year, I formed a team to see if we could make a 2D platformer in the style of the classic
+                    Castlevania series; more specifically, Super Castlevania IV. That particular title made use of a
+                    grappling mechanic, but our instructors were strongly against emulating something so complex. So,
+                    <i>this</i> project was my chance to make want I wanted back in sophomore year a reality.
+                    <br/><br/>
+                    I didn't end up making a full-on Castlevania clone, but I managed to create the swinging mechanic and a
+                    decently challenging experience around it.
+                </p>
+
+                <div style="display: flex; width: 82%; flex-direction: column; margin: 0 10% 0 5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/cNI4WHBWoX8">
+                    </iframe>
+                </div>
+            </div>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 0 10%">What I Did</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 5% 10%">
+                <i>Again, this was a solo project. I did pretty much everything on it (even the art!), but here are a few of the things I felt were notable to list.</i>
+            </h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: repeat(4, auto);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 5%;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>The Swinging Mechanic</b></u><br/><br/>
+                    With this being made in Unity, one would expect physics-based movement to be taken care of
+                    by the built-in physics. While I did use it for standard movement like running and jumping,
+                    the swinging was completely custom-made. I felt creating it from scratch would allow me to
+                    truly understand what's happening under the hood and allow for easy tweaking of values to
+                    perfect the feel of the swing.<br/><br>
+
+                    Being the core mechanic of the game, it was the first thing I started working on. To the right
+                    of this text, you'll see a less graphically-rich gameplay clip. This is showcasing what I had
+                    done on the first week of development.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/grapplania/1_Swing.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/grapplania/Swing_Week1.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>The Camera</b></u><br/><br/>
+                    Easily one of the most time-consuming things I worked on for this project. Of course, Unity comes
+                    with its own camera, but how it behaves must be made from scratch. The use of a Unity interpolation
+                    function makes smoothly following the player easy enough to implement. However, the creation of camera
+                    boundaries is much less trivial. Camera boundaries are a staple of 2D games. The camera will stay
+                    centered on the player much of the time, but once they walk to close to a wall, the camera will cease
+                    following horizontally. While not necessarily mandatory behavior, I felt it was needed for game feel.
+                    <br/><br/>
+                    I originally intended to create a sort of concave polygon that spanned a level and contained the camera,
+                    but it unfortunately did not work (as it got very confused at corners). I quickly pivoted and found a
+                    solution that was not only easier to implement, but virtually functioned the same.<br/>
+                    Instead of a single bounding shape, I made individual boxes that could intersect to simulate
+                    a larger, concave polygon. If the player entered an appropriate area, the camera would leave whatever
+                    bounding box it was previously in and smoothly transition to the next one.<br/><br/>
+                    Many hours were spent fixing bugs, and there were still a few tiny quirks with the camera behavior
+                    after publishing the game, but it functioned well enough.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/grapplania/2_CameraBounds1.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/grapplania/3_CameraBounds2.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>The Audio</b></u><br/><br/>
+                    Unity supports middleware like FMOD and Wwise, which I had to work with in the past, but instead of relearning
+                    them for a small project, I just decided to work with Unity's audio engine and make my own sort of audio object
+                    to interface with it.<br/><br/>
+                    There was the simple play-sound-effect-when-a-particular-event-happens, but I also implemented
+                    fading for music tracks (including crossfading), seamless looping for audio files that can't be repeated easily
+                    (i.e. replaying the audio from a particular point in the file rather than just the beginning), as well as a system
+                    that prevents a given sound effect from playing too soon after it's already been played.<br/><br/>
+                    It may not sound like much, especially since it utilized Unity's audio engine, but I believe this interface turned
+                    into a fairly intuitive system that any designer/programmer could work with (i.e. a simple "I'd like to do this.
+                    Oh, there's a function for it!" and it works fine with the user not needing to know how it works under the hood;
+                    a black box, essentially.)
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/grapplania/6_Sound1.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/grapplania/7_Sound2.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 10% 10%;">
+                    <u><b>The Level Design</b></u><br/><br/>
+                    While not a coding task, I felt<code>&#8212;</code>since I was in the "Computer Science <i>and</i>
+                    Game Design" program at DigiPen<code>&#8212;</code>mentioning the level design here was warranted.
+                    Creating a mechanic for a game is one thing, but bringing out its potential is another. Level design
+                    fills this very role (especially for a movement-based mechanic).<br/><br/>
+                    I spent quite a bit of time drawing out the levels and individual obstacles within them. Then there was
+                    translating it to the actual game and having it playtested. Much polishing and iterating ocurred after
+                    receiving feedback, and I believe the end result did a good job accentuating the core mechanic, as well
+                    as gradually introducing more challenge as the player progressed.
+                </p>
+                
+                <div style="margin: 0 10% 0 10%">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <img src="../media/grapplania/img_LevelFragment1.PNG" style="width: 75%; margin: 0 0 0 0;">
+                        <video src="../media/grapplania/4_LevelFragment1.mp4"
+                               autoplay muted loop style="width: 75%; margin: 0 0 2.5% 0;">
+                        </video>
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <img src="../media/grapplania/img_LevelFragment2.PNG" style="width: 75%; margin: 0 0 0 0;">
+                        <video src="../media/grapplania/5_LevelFragment2.mp4"
+                               autoplay muted loop style="width: 75%; margin: 0 0 10% 0;">
+                        </video>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

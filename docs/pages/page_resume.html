@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(20,20,20);" onload="PullUpScreen()">
+
+        <div>
+
+            <h1 style="position: absolute;
+                       top: 50%;
+                       left: 50%;
+                       transform: translate(-50%, -50%);
+                       text-align: center;
+                       color: white;
+                       font-size: 50px;
+                       z-index: -5;">
+                       Work in progress...</h1>
+
+            <div class="screen"></div>
+            <div class="headerBar"></div>
+            
+            <div class="topRight links">
+                <ul>
+                    <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+                    <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+                    <li><button>Resume</button></li>
+                </ul>
+            </div>
+
+            <div class="topLeft links">
+                <ul>
+                    <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+                </ul>
+            </div>
+        </div>
+
+    </body>
+
+</html>

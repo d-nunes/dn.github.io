@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: black;" onload="PullUpScreen()">
+    
+        <img src="../media/dimensional/Thumbnail_Dimensional.PNG"
+            style="position: fixed;
+                    z-index: -10;
+                    filter: brightness(10%);
+                    top: 0;
+                    left: 0;
+                    -webkit-user-drag: none;
+                    min-height: 100%;">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(9, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 10% 0 10% 0">
+                <img src="../media/dimensional/Logo_DimGears.PNG"
+                    style="width: 50%; filter: drop-shadow(0 0 25px white); -webkit-user-drag: none;">
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                Dimensional Gears is a 2.5D puzzle platformer that takes place in a dystopian steam-punk future
+                where household appliances are the only sentient beings left. You play as Mike O. Wave the lovable
+                microwave. You and your friends are stuck in an abandoned factory and must use Mike's supernatural
+                ability to shift dimensions in order to escape. Make the most of this strange power to explore a
+                dangerous 2.5D environment within a shifting, orthographic plane to escape the factory and save
+                your friends.
+                <br/><br/>
+                Available on Steam and Itch.io
+            </p>
+            
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/z9CaXpEb9L8">
+            </iframe>
+            <!--<div style="display: flex; justify-content: center;">
+                <video src="../media/dimensional/Trailer_Dimensional.mp4"
+                            poster="../media/dimensional/Thumbnail_Dimensional.PNG"
+                            controls type="video/mp4"
+                            style="width: 70%; margin: 2.5% 0 0 0">
+                </video>
+            </div>-->
+
+            <div style="display: flex;
+                        justify-content: space-around;
+                        margin: 2.5% 10% 2.5% 10%">
+                <img src="../media/available_steam.png"
+                    style="width: 30%; filter: drop-shadow(0px 0px 10px white); -webkit-user-drag: none;"
+                    onclick="OpenNewTab('https://store.steampowered.com/app/2122040/Dimensional_Gears/')">
+                <img src="../media/available_itch.svg"
+                    style="width: 30%; filter: drop-shadow(0px 0px 10px white); -webkit-user-drag: none;"
+                    onclick="OpenNewTab('https://digipen.itch.io/dimensional-gears');">
+            </div>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 2.5% 10% 5% 10%">Info</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto auto auto auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    This was a solo project I made in the Unity engine over the course of my final semester of DigiPen. Back in
+                    sophomore year, I formed a team to see if we could make a 2D platformer in the style of the classic
+                    Castlevania series; more specifically, Super Castlevania IV. That particular title made use of a
+                    grappling mechanic, but our instructors were strongly against emulating something so complex. So,
+                    <i>this</i> project was my chance to make want I wanted back in sophomore year a reality.
+                    <br/><br/>
+                    I didn't end up making a full-on Castlevania clone, but I managed to create the swinging mechanic and a
+                    decently challenging experience around it.
+                </p>
+
+                <div style="display: flex; width: 82%; flex-direction: column; margin: 0 10% 0 5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/2hQcDf3UkUo">
+                    </iframe>
+                </div>
+            </div>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 5% 10%">What I Did</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: repeat(2, auto);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 5%;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>The Audio Implementation</b></u><br/><br/>
+                    Junior year of DigiPen requires students use the industry-standard audio middleware Wwise in their
+                    game projects. I stuck with my team from sophomore year, and since I was the audio programmer then,
+                    I remained the audio programmer for this project. With the sound designer working on his audio within
+                    Wwise's interface and my integration of it into Unity, we were able to:<br/><br/>
+                    - Get smooth transitions between music tracks.<br/>
+                    - Implement adaptive music.<br/>
+                    &emsp;&emsp;&emsp;- Music became more intense if the player were low on health.<br/>
+                    &emsp;&emsp;&emsp;- If the player were behind a wall, which prevented movement, music was muffled.<br/>
+                    &emsp;&emsp;&emsp;- When paused, music was more mellow.<br/>
+                    - Add spatial audio.
+                    <br/><br/>
+                    The spatial audio is notable due to the style of the game. While it is 2D in nature, it is housed within a 3D
+                    space.<br/>
+                    Say an object producing sound were next to the player. From an orthographic view, it will always seem this way.
+                    However, from a perspective view, it could actually be some ways behind or in front of the player. If we simply
+                    add a sound effect to this object, get the distance between it and the player for the spatial audio effect, we
+                    would merely get spatial audio in 3D. However, because the game is technically 2D, we need 2D spatial audio.<br/> 
+                    The solution I implemented for this had every "spatial audio" object be given a child object that contained their
+                    respective sounds. Depending on which plane the player was viewing the game in, I would project all spatial sound
+                    child objects onto the plane. Because the tech lead on the team did something similar for the player character, it
+                    meant now all spatial sounds and the player were on the same plane. This emulated 2D spatial audio perfectly, as
+                    the 3rd dimension had essentially been stripped from the appropriate objects.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/dimensional/1_Dist1.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/dimensional/2_Dist2.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/dimensional/3_SoundShift.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>Backup</b></u><br/><br/>
+                    Because we were working in Unity, our many designers<code>&#8212;</code>who were well-versed
+                    in the engine<code>&#8212;</code>were capable of implementing certain things the programmers
+                    likely would have done, meaning the tech team had less tasks to work on. I was the audio programmer,
+                    and that was really all I was given to do. However, I essentially served as backup in the event new
+                    tasks were created and the rest of the programmers already had their hands full. Tasks I took included
+                    (but were not limited to):<br/><br/>
+                    - Making the originally static jump variable.<br/>
+                    - Shrinking assets the player was able to pick up.<br/>
+                    - Recreating the behavior of the one enemy type we had in the game.<br/>
+                    - Displaying button prompts over interactable elements.<br/>
+                    - Connecting pushable buttons to spawners so they actually functioned.<br/>
+                    - Many general bug fixes we had listed on a spreadsheet that other members were assigned, but weren't
+                      able to get to at the time.<br/>
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/dimensional/4_Jump.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/dimensional/6_Button.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/dimensional/5_Enemy.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 5% 0;">
+                    </video>
+                </div>
+            </div>
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

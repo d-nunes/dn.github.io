@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: black;" onload="PullUpScreen()">
+    
+        <img src="../media/treacherous/Background_Totem.png"
+            style="position: fixed;
+                    z-index: -10;
+                    filter: brightness(10%);
+                    top: 0;
+                    left: 0;
+                    -webkit-user-drag: none;
+                    min-height: 120%;">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(8, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 7.5% 0 7.5% 0">
+                <img src="../media/treacherous/Logo_Totem.png"
+                    style="width: 50%; filter: drop-shadow(0 0 25px white); -webkit-user-drag: none;">
+            </div>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/dw85GlCjA40">
+            </iframe>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 2.5% 10% 5% 10%">Info</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto auto auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    In the second semester of freshman year of DigiPen, teams of CS students port over a custom
+                    engine they learn to make in another course and create a game in it. Treacherous Totem was what
+                    my team and I came up with.<br/><br/>
+                    Compared to the sophomore project class, this was less backend-focused since our engine was
+                    pretty much provided to us, and we simply filled in missing portions of code. 90% of development
+                    was focused on creating the actual game's content.<br/><br/>
+                    This project made me realize I cared about design just as much as programming.
+                </p>
+
+                <div style="display: flex; width: 82%; flex-direction: column; margin: 0 10% 0 5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/SXTZyIXiIXc">
+                    </iframe>
+                </div>
+            </div>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 5% 10%">What I Did</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: repeat(4, auto);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 5%;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>The Character Controller</b></u><br/><br/>
+                    This game's physics was simple. The only "solid" collision in the game was the player against the
+                    totem pole (there was no ground to stand on). So, the player's character controller was a bit
+                    different from what you'd see in a standard 2D platformer. You could move up and down the totem pole
+                    and jump off it; that was it. Other movement types would be given to the player as they progressed.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/treacherous/0_Character.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>Gameplay Mechanics</b></u><br/><br/>
+                    If the player could jump off the totem pole, how would they return to it? This was achieved through
+                    our first mechanic: an item the player threw horizontally that, when colliding with the totem pole,
+                    set the player's position to the point of collision. That formed the basis for the game loop: an
+                    assortment of enemies would attempt to knock the player off the pole, and the player would have to
+                    try their best to avoid them with the mechanics they're given.<br/>
+                    Other mechanics included:<br/><br/>
+
+                    A slide. In the event an enemy or hazardous projectile got close, the player could slide up or down the
+                    totem pole to quickly escape danger.<br/><br/>
+
+                    A double jump. After jumping off the totem pole, the player could jump straight up and in a forward
+                    or backward arc. It served as a way to avoid more obstacles off the totem pole.<br/><br/>
+
+                    A throwable item capable of collecting out-of-reach coins that increased your score.<br/><br/>
+                    
+                    An upward dash. While similar to vertically double jumping, this covered a greater distance.<br/><br/>
+
+                    A short-ranged attack capable of killing enemies that got close to the player.<br/><br/>
+
+                    A horizontal dash that sends the player away from the totem pole, but keeps them invincible throughout
+                    and kills anything the player collides with.
+
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/treacherous/1_Slide.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/2_Rune.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                    <video src="../media/treacherous/3_DoubleJump.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/4_MagicCard.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/5_Dash.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/6_Blade.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/7_ShadowDash.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>Enemies</b></u><br/><br/>
+                    I made quite a few enemies for this game. From spiders that crawled up the totem pole to a flying
+                    cannon that fired spikes onto it. Some enemies served as noise keep the player moving while others
+                    promoted use of specific mechanics.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/treacherous/8_Shadow.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/9_Beetle.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                    <video src="../media/treacherous/10_RolyPoly.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/11_Spider.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/12_PoisonSpider.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/13_IceDragon.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/treacherous/14_FlyingTotem.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 5% 0;">
+                    </video>
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

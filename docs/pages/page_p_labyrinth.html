@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: black;" onload="PullUpScreen()">
+    
+        <img src="../media/labyrinth/Background_Image.png"
+            style="position: fixed;
+                    z-index: -10;
+                    filter: brightness(50%);
+                    top: 0;
+                    left: 0;
+                    -webkit-user-drag: none;
+                    min-height: 100%;">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(7, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 10% 0 10% 0">
+                <img src="../media/labyrinth/Logo_Labyrinth.png"
+                    style="width: 50%; filter: drop-shadow(0 0 25px white); -webkit-user-drag: none;">
+            </div>
+            
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/dl-7tnyDTcM">
+            </iframe>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 2.5% 10% 5% 10%">Info</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto auto auto auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    The precursor to Grapplania. Sophomore year of DigiPen has students form teams to create a custom engine with C++.
+                    When I formed the team, I suggested we make a simple 2D platformer in the style of Castlevania, and center it
+                    around a grapple mechanic (like the one from Super Castlevania IV). Instructors believed our concept was
+                    out-of-scope, so we had to pivot to a simplified "swing" and make the game's challenge solely platforming
+                    (no enemies, no health system, etc.).<br/><br/>
+                    We may not have created what we originally sought to develop, but it was a great learning experience.
+                </p>
+
+                <div style="display: flex; width: 82%; flex-direction: column; margin: 0 10% 0 5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/4aIyAfvlWuY">
+                    </iframe>
+                </div>
+            </div>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 5% 10%">What I Did</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: repeat(2, auto);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 5%;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>Engine Work</b></u><br/><br/>
+                    Before we could start work on an actual game, us programmers were responsible for creating a custom engine
+                    to actually host a gameplay experience.<br/><br/>
+                    I created that underlying loop that calls every function (draw, update, input, etc) as well as calculates
+                    delta time.<br/><br/>
+                    I made a game state manager in the form of a stack. You'd push states onto the stack, and whatever was on
+                    top would be the current state (with everything below being suspended). Popping the current state off
+                    would resume the state below it. This functionality ended up underutilized, as there wasn't much need to
+                    suspend states over others. It was ultimately only used for the pause menu. If you were in the "Level 1"
+                    state and paused, a "Pause" state would be pushed onto the stack and suspend level 1. Unpausing would pop
+                    the pause state off the stack and resume level 1.<br/>
+                    When it came to transitioning from level to level, I just used a function that replaced the topmost
+                    state in the stack with another.<br/>
+                    Any information that needed to persist across game states (audio, play time, score, etc.) was stored within
+                    a pointer that just existed outside of the scope of the states.
+                    <br/><br/>
+                    I added an animation system to the engine. It was based off a method us CS students had been shown in a previous
+                    course. However, that implementation simply took sprite sheets and played through them start to finish. If
+                    you needed multiple animations, you had to separate them into different files. I was not a fan of such a
+                    restriction. I was used to sprite sheets containing all frames of a particular entity. If we have a player sprite,
+                    we should have a single sprite sheet that contains the frames for idling, running, jumping, and every other
+                    action. With this sentiment, I altered the animation implementation I was taught to include indexing within
+                    sprite sheets. That way you could iterate through a series of sprites within a sheet rather than the whole
+                    file.<br/><br/>
+                    Being the audio programmer on the team, I was responsible for implementing the audio engine. For sophomore year,
+                    we needed to use the audio middleware FMOD. I made the pipeline as streamlined as I possibly could at the time.
+                    If our Sound Designer ever needed to add a new sound effect or music track to the game, they were only required
+                    to add the name of the audio file to a list in a text file, and the audio engine would do the rest of the work.
+                    Of course, there still needed to be a line of code somewhere to actually play the sound/music at the right time,
+                    and placing said line was my responsibility.
+                    
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/labyrinth/1_Pause.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/labyrinth/2_Animation.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 5% 10%;">
+                    <u><b>Gameplay-related Programming</b></u><br/><br/>
+                    Eventually, the back-end work of our custom engine was pretty much done, so programmers could start
+                    focusing on assisting designers in translating their work and fleshing out certain pipelines for them.<br/>
+                    I was responsible for transferring the game's core mechanic to our engine, which had been created in
+                    Unity by the designers. It may not sound like much, but it was a good learning experience. I had to analyze
+                    C# and translate it accordingly to C++, as well as optimize it.<br/><br/>
+                    In the prototype levels the designers made, they depicted grappling points that moved along paths. I
+                    ended up creating a path system in the custom engine that could be given a series of points, and a given
+                    object would interpolate across them.
+                    <br/><br/>
+                    During development, designers asked if moving platforms could be made. The responsibility of creating the
+                    behavior and collision fell on me. The tech lead, who had created the static collision for the game's
+                    levels, said his collision wasn't capable of physics-based movement, so I had to essentially create a
+                    smaller collision system from scratch for moving platforms (using the AABB collision method). Combined
+                    with the path system I made, moving platforms functioned well.<br/>
+                    The only gripe I had with my implementation was the fact that standing on moving platforms resulted in a
+                    minor vertical jitter, which was due to gravity trying to push the player into the platform, and my collision
+                    code pushing it out. While it was disappointing, designers did note playtesters liked the effect, as the
+                    jitter seemed like a natural result of standing on a moving, machine-like platform. So, in the end, that
+                    bug stayed in as a feature.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/labyrinth/3_Grapple.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/labyrinth/4_Platforms.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 0 0;">
+                    </video>
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

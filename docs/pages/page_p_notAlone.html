@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(10, 10, 10);" onload="PullUpScreen()">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(7, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 7.5% 0 7.5% 0;">
+                <h1 style="text-align: center; color: white; font-size: 125px;">
+                    Not Alone
+                </h1>
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                Workers on a space station have found themselves in a nightmarish scenario. A specimen the research
+                division had been studying escaped its confines and wreaked havoc. With no other option left, the
+                sole survivor of the event must navigate their way through the ruined station, avoiding the wretched
+                creature, and completing a series of objectives to eventually escape.
+            </p>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 2.5% 10% 5% 10%">Info</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto auto auto auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    In the project classes of senior of DigiPen, instructors encourage students to make portfolio pieces.
+                    While I went on to make Grapplania for the second semester, I worked with two other programmers on
+                    a horror-themed game for the first.<br/><br/>
+                    Our game was far from amazing (especially with how difficult the AI programmer made the
+                    game's enemy), but one can see the effort the team and I put into it (as long as you use the
+                    invincibility glitch).<br/><br/>
+                    It ultimately allowed me to work on mechanics and level design in a pure 3D space, stuff I had yet
+                    to do at DigiPen.
+                </p>
+
+                <div style="display: flex; width: 82%; flex-direction: column; margin: 0 10% 0 5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/JJ9iW28dPfI">
+                    </iframe>
+                </div>
+            </div>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 5% 10%">What I Did</h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: repeat(2, auto);
+                        grid-column-gap: 0px;
+                        grid-row-gap: 5%;
+                        z-index: -5">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>The Character Controller</b></u><br/><br/>
+                    Nothing too much to say here. I had no experience making a first-person, 3D character controller,
+                    so I really wanted to make one. I implemented standard movement, camera control, sprinting, and
+                    crouching.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/notAlone/1_Movement.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 2.5% 0;">
+                    </video>
+                    <video src="../media/notAlone/2_Crouch.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                    <video src="../media/notAlone/3_Sprint.mp4"
+                           autoplay muted loop style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>Pushing Mechanic</b></u><br/><br/>
+                    I wanted to add some puzzle elements to the game, and that came in the form of object pushing. When
+                    close to a pushable object, the player can clamp onto it, and push/pull it relative to where
+                    they grabbed the object from. Unfortunately, the mechanic was fairly underutilized and testers
+                    found it a bit clunky the few times they used it. However, it did give me insight on how I'd be able
+                    to better the mechanic in future projects.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <video src="../media/notAlone/4_Boxes.mp4"
+                           autoplay muted loop style="width: 100%; margin: 0 0 0 0;">
+                    </video>
+                </div>
+
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    <u><b>Level Design</b></u><br/><br/>
+                    I had actually been taking a 3D level design course alongside this project course. If I learned
+                    something new, I'd see if I could apply it to this game's level.<br/><br/>
+                    I started the player out in a small, linear area to gradually teach them the the mechanics of the game,
+                    then put them in a larger, more open area (which included the AI enemy that would actively
+                    seek them). The game loop has players exploring the space station collecting items and performing
+                    tasks to get an escape pod functioning. Interactables were evenly scattered to promote exploration, a bit
+                    of backtracking, and ensure the player would consistently encounter the enemy.
+                </p>
+
+                <div style="margin: 0 10% 0 10%">
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <img src="../media/notAlone/img_area1.PNG" style="width: 75%; margin: 0 0 0 0;">
+                        <img src="../media/notAlone/level_Tutorial.png" style="width: 75%; margin: 0 0 2.5% 0;">
+                    </div>
+
+                    <div style="display: flex; flex-direction: column; justify-content: center; align-items: center;">
+                        <img src="../media/notAlone/img_area2.PNG" style="width: 75%; margin: 0 0 0 0;">
+                        <img src="../media/notAlone/level_mainArea.png" style="width: 75%; margin: 0 0 10% 0;">
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

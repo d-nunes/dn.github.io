@@ -1,0 +1,105 @@
+.elements
+{
+    position: absolute;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: end;
+
+    bottom: 0%;
+
+    z-index: -5;
+}
+
+.image
+{
+    /*width: 16.665vw;*/
+    height: 87.5vh;
+    width: 16.665%;
+    object-fit: cover;
+
+    transition: 0.25s;
+
+    -webkit-user-drag: none;
+}
+
+.image:hover
+{
+    /*using transform: scale() ensures the image will stay centered when growing/shrinking
+    transform: scale(1.1);*/
+    /*width: 16.665vw;*/
+    height: 90vh;
+    object-fit: cover;
+
+    filter: brightness(50%);
+}
+
+.titleText
+{
+    /*makes it so the user cannot highlight the text*/
+    user-select: none;
+    /*remember the "Raycast Target" boolean of Unity UI element? Setting this to none is
+      the same as setting that flag to false*/
+    pointer-events: none;
+    position: absolute;
+    color: white;
+    font-size: 2vw;
+    text-align: center;
+
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    
+    right: 0%;
+    left: 0%;
+    bottom: 0%;
+
+    z-index: -3;
+}
+
+.gradientBackground
+{
+    content: '';
+    pointer-events: none;
+    position: absolute;
+    height: 23%;
+    width: 100%;
+    background: linear-gradient(rgba(0,0,0,0), rgba(0,0,0,1));
+
+    bottom: 0%;
+
+    z-index: -4;
+}
+
+/*@media (max-width: 600px)
+{
+    .elements
+    {
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    
+        bottom: 0%;
+    
+        z-index: -5;
+    }
+
+    .image
+    {
+        height: 100px;
+        width: 100%;
+        object-fit: cover;
+
+        transition: 0.25s;
+    }
+
+    .image:hover
+    {
+        height: 16.665%;
+        width: 60%;
+        object-fit: cover;
+
+        filter: brightness(50%);
+    }
+}*/

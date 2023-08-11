@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(10, 10, 10);" onload="PullUpScreen()">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(9, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 7.5% 0 7.5% 0;">
+                <h1 style="text-align: center; color: white; font-size: 125px;">
+                    PCG Roguelike
+                </h1>
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                Students in the Computer Science and Game Design program at DigiPen will eventually take a level
+                design course that has students work on a roguelike that's procedurally generated.<br/><br/>
+                The instructor actually provided an initial framework that had many features already in it. I
+                didn't feel comfortable working with something mostly developed, so I created my entire project
+                from scratch within Unity.
+            </p>
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/9tRxkVMCtB0">
+            </iframe>
+            
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/BNjH-Af4b_s">
+            </iframe>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/Ycp108tMefg">
+            </iframe>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 0 10%">Map Examples</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 5% 10%">
+                <i>(Being a PCG project, there are very many maps that can be generated, but here are just few examples.)</i>
+            </h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 5%;
+                        z-index: -5">
+                <div style="margin: 0 10% 0 10%">
+                    <img src="../media/pcg/Slide1.PNG" style="width: 100%; margin: 0 0 2.5% 0;">
+                    <img src="../media/pcg/Slide3.PNG" style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    <img src="../media/pcg/Slide5.PNG" style="width: 100%; margin: 2.5% 0 5% 0;">
+                </div>
+
+                <div style="margin: 0 10% 0 10%">
+                    <img src="../media/pcg/Slide2.PNG" style="width: 100%; margin: 0 0 2.5% 0;">
+                    <img src="../media/pcg/Slide4.PNG" style="width: 100%; margin: 2.5% 0 2.5% 0;">
+                    <img src="../media/pcg/Slide6.PNG" style="width: 100%; margin: 2.5% 0 5% 0;">
+                </div>
+
+            </div>
+
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>
