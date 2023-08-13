@@ -1,3 +1,15 @@
+//if the browser back button was used, reload the page
+(function()
+{
+    window.onpageshow = function(event)
+    {
+        if (event.persisted)
+        {
+            window.location.reload();
+        }
+    }
+})();
+
 function HomepageLinks(url)
 {
     //find the element with the class "headerBar" and manipulate its width
