@@ -23,7 +23,30 @@
     -webkit-user-drag: none;
 }
 
+.image2
+{
+    /*width: 16.665vw;*/
+    height: 87.5vh;
+    width: 20%;
+    object-fit: cover;
+
+    transition: 0.25s;
+
+    -webkit-user-drag: none;
+}
+
 .image:hover
+{
+    /*using transform: scale() ensures the image will stay centered when growing/shrinking
+    transform: scale(1.1);*/
+    /*width: 16.665vw;*/
+    height: 90vh;
+    object-fit: cover;
+
+    filter: brightness(50%);
+}
+
+.image2:hover
 {
     /*using transform: scale() ensures the image will stay centered when growing/shrinking
     transform: scale(1.1);*/

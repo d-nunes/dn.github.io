@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(10, 10, 10);" onload="PullUpScreen()">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(9, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 7.5% 0 7.5% 0;">
+                <h1 style="text-align: center; color: white; font-size: 125px;">
+                    3D Level Design
+                </h1>
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                Being in the Computer Science and Game Design course at DigiPen, I was only required to take one
+                level design course. In it, aside from the PCG Roguelike project, we had to create a 3D level for
+                a player to navigate. That particular assignment got me interested in general level design
+                (player guidance, scene composition, environmental storytelling, etc.). So, when I was finally
+                able to take electives for my Design requirement, I decided to take the 3D Level Design course,
+                which is traditionally only available to pure Design students.
+            </p>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 1% 10%">Project A</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 1% 10%">
+                Scene Composition and Transition
+            </h1>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/Re2gF_Jn_RI">
+            </iframe>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 1% 10%">Project B</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 1% 10%">
+                Environmental Storytelling
+            </h1>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 2.5% 10% 5% 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/hRWd8yPAaPw">
+            </iframe>
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

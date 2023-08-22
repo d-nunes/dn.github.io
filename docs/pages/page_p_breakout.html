@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(10, 10, 10);" onload="PullUpScreen()">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(9, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 7.5% 0 7.5% 0;">
+                <h1 style="text-align: center; color: white; font-size: 125px;">
+                    Breakout (Game Feel)
+                </h1>
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                One particular design course at DigiPen had us students take classic arcade games
+                (Pong, Breakout, etc.) and add lots of feedback to enhance the game feel. The base projects
+                we were given contained the absolute bare minimum: a playable game with no audio, color,
+                nor animations, and it was the student's responsibility to make it more appealing.
+            </p>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 1% 10%">Juxtaposition</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 2.5% 10%">
+                Here are two videos. The left one is gameplay of the base project I started out with.
+                The right one is the finished product.
+            </h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto auto auto auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5">
+                <div style="display: flex; width: 82%; height: 450px; flex-direction: column; margin: 0 2.5% 0 5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/hTfvsg0_2dQ">
+                    </iframe>
+                </div>
+
+                <div style="display: flex; width: 82%; height: 450px; flex-direction: column; margin: 0 5% 0 2.5%">
+                    <iframe style="flex-grow: 1; border: none; margin: 0; padding: 0;"
+                        src="https://www.youtube.com/embed/ZLmH-ZJY1Ik">
+                    </iframe>
+                </div>
+            </div>
+
+            <h1 style="text-align: left; color: white; font-size: 25px; margin: 2.5% 10% 0% 10%">
+                You can probably tell what I've added, but here's a full list of my additions:
+            </h1>
+
+            <ul style="color: white; font-size: 25px; margin: 1% 10% 5% 10%">
+                    <li>Tweening on many elements
+                        <ul>
+                            <li>Player paddle when it hits the ball</li>
+                            <li>Bricks as they spawn in</li>
+                            <li>Score as the value increases</li>
+                            <li>Extra lives as the player gradually acquires them</li>
+                        </ul>
+                    </li>
+                    <li>Particles
+                        <ul>
+                            <li>Trail on the ball as it travels</li>
+                            <li>Bricks when they're hit</li>
+                            <li>Ball when it hits a wall</li>
+                            <li>Ball when it hits the paddle after a streak</li>
+                        </ul>
+                    </li>
+                    <li>Numerous sound effects
+                        <ul>
+                            <li>Most notably, a sound that increases in pitch as the player maintains a streak</li>
+                        </ul>
+                    </li>
+                    <li>Freezing that lasts a single frame when the ball hits a brick (adds more "oomph" to the hit)</li>
+                    <li>Camera shake when the ball hits a brick (adds even more "oomph" to the hit)</li>
+                    <li>Score counts up rather than statically change to whatever the new value is</li>
+                    <li>Extra lives that fill radially till the player earns enough points</li>
+                    <li>Ball changes color as their streak increases</li>
+                    <li>Dynamic backgrounds that change color depending on the player's streak</li>
+                    <li>A deadlier-looking kill zone for the ball</li>
+                    <li>A fancy death animation that isn't just the ball popping back on the paddle</li>
+                    <li>A more impactful game over sequence</li>
+            </ul>
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>

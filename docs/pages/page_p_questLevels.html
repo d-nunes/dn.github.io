@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <!--meta tag defines information of our file. Inside the meta tag, we are assigning attributes/properties-->
+        <meta charset="UTF-8">
+        <meta name="description" content="Daniel's portfolio site.">
+
+        <!--title tag displays the text on the site's browser tab-->
+        <title>Daniel's Portfolio</title>
+        <link rel="stylesheet" href="../sheets/uiLayoutSticky.css">
+        <script src="../scripts/script.js" defer></script>
+    </head>
+
+    <body style="background-color: rgb(10, 10, 10);" onload="PullUpScreen()">
+
+        <!--Single column grid that all content is put in..-->
+        <!--
+            | content |
+            +---------+
+            | content |
+            +---------+
+            | content |
+        -->
+        <div style="position: absolute;
+                    left: 0%;
+                    right: 0%;
+                    display: grid;
+                    grid-template-rows: 12vh repeat(8, auto);
+                    z-index: -5">
+            
+            <!--empty row that spans the size of the header banner-->
+            <div></div>
+
+            <!--Game title image-->
+            <div style="display: flex; align-items: center; justify-content: center; margin: 7.5% 0 7.5% 0;">
+                <h1 style="text-align: center; color: white; font-size: 125px;">
+                    Quest Design
+                </h1>
+            </div>
+
+            <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 10% 0 10%;">
+                Wanting to continue studying level design, for my final semester of DigiPen (after the 3D Level
+                Design course I took), I signed up for an experimental "Mission and Quest Design" course. Being
+                experimental, it was the first time the course would be taught, and I (as well as a few others)
+                served as testers for it.<br/>
+                The course was a little rough around the edges, but the content was quite infromative and gave me
+                a chance to work on more 3D levels.
+            </p>
+            
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 1% 10%">Project A</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 2% 10%">
+                <i>Fetch Mission</i>
+            </h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5;
+                        margin: 0 0 5% 0">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    The first real project of the course was to create a simple fetch mission given some requirements (i.e.
+                    collect 5 artifacts, have a boss fight, etc.) while using a free asset pack provided by Unity.
+                    Even with the assets, the level looks and feels like a whitebox when playing or watching it, but that
+                    was to be expected. The course was meant to emulate the role of an actual mission/quest designer, who'd
+                    create the general structure for the level, adding many temporary elements to it (basic cutscenes, 
+                    decorations, etc.) for the sake of testing.<br/><br/>
+                    To the right is the level I drew out before constructing it in Unity.<br/>
+                    Below is a playthrough of my level.
+                </p>
+
+                <div style="display: flex; width: 80%; flex-direction: column; margin: 0 10% 0 5%; align-items: center;">
+                    <img src="../media/smallerProjects/Quest_Map1.PNG" style="width: 100%">
+                </div>
+            </div>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 0 10% 0 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/NoYRXFPM8_Q">
+            </iframe>
+
+            <h1 style="text-align: center; color: white; font-size: 75px; margin: 5% 10% 1% 10%">Project B</h1>
+            
+            <h1 style="text-align: center; color: white; font-size: 25px; margin: 0 10% 2% 10%">
+                <i>Multi-Mission Level</i>
+            </h1>
+
+            <div style="display: grid;
+                        grid-template-columns: 50% 50%;
+                        grid-template-rows: auto;
+                        grid-column-gap: 0px;
+                        grid-row-gap: 0px;
+                        justify-items: center;
+                        z-index: -5;
+                        margin: 0 0 5% 0">
+                <p style="text-align: left; color: white; font-size: 25px; line-height: 130%; margin: 0 5% 0 10%;">
+                    The final project for the class was to create a full-on gameplay experience based on the story of
+                    Little Red Riding Hood. This project was more involved than the previous, as I had to implement 4
+                    missions (defense, fetch, puzzle/explore, and escort) in the level, and ensure the narrative was
+                    properly established (through the use of cutscenes).
+                </p>
+
+                <div style="display: flex; width: 80%; flex-direction: column; margin: 0 10% 0 5%; align-items: center;">
+                    <img src="../media/smallerProjects/Quest_Map2.PNG" style="width: 100%">
+                </div>
+            </div>
+
+            <iframe style="width: 80vw; height: 37.5vw; margin: 0 10% 5% 10%" frameborder="0"
+                    src="https://www.youtube.com/embed/mrVp4SUzoz8">
+            </iframe>
+
+        </div>
+
+    <div class="screen"></div>
+    <div class="headerBar"></div>
+
+    <div class="topRight links">
+        <ul>
+            <li><button onclick="OpenNewWindow('page_about.html')">About</button></li>
+            <li><button onclick="OpenNewWindow('page_projects.html')">Projects</button></li>
+            <li><button onclick="OpenNewWindow('page_resume.html')">Resume</button></li>
+        </ul>
+    </div>
+
+    <div class="topLeft links">
+        <ul>
+            <li><button class="homeButton" onclick="OnHomeButtonClick()">Home</button></li>
+        </ul>
+    </div>
+
+    </body>
+
+</html>
